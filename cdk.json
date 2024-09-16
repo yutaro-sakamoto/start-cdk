@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/image-builder-4j.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/start-cdk.ts",
   "watch": {
     "include": ["**"],
     "exclude": [

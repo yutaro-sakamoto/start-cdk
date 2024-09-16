@@ -1,9 +1,9 @@
 // import * as cdk from 'aws-cdk-lib';
 // import { Template } from 'aws-cdk-lib/assertions';
-// import * as ImageBuilder4J from '../lib/image-builder-4j-stack';
+// import * as ImageBuilder4J from '../lib/start-cdk-stack';
 
 // example test. To run these tests, uncomment this file along with the
-// example resource in lib/image-builder-4j-stack.ts
+// example resource in lib/start-cdk-stack.ts
 test("SQS Queue Created", () => {
   //   const app = new cdk.App();
   //     // WHEN

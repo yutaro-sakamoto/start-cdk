@@ -1,8 +1,8 @@
 {
-  "name": "image-builder-4j",
+  "name": "start-cdk",
   "version": "0.1.0",
   "bin": {
-    "image-builder-4j": "bin/image-builder-4j.js"
+    "start-cdk": "bin/start-cdk.js"
   },
   "scripts": {
     "build": "tsc",
