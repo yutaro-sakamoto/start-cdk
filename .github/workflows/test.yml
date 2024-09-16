@@ -29,10 +29,12 @@ jobs:
       - name: Run tests
         run: npm test
 
+      # 注意: 開発が進むとlib/constructに新しいtsファイルを追加することがある
+      # この場合は、lib/construct/*/*.tsを下記に追加すると良い
       - name: Check docs
         run: |
           npx typedoc --validation --treatWarningsAsErrors --treatValidationWarningsAsErrors \
-          lib/*.ts lib/constructs/*/*.ts bin/*.ts
+          lib/*.ts bin/*.ts
 
       - name: Synthesize the CDK stack
         run: npx cdk synth
