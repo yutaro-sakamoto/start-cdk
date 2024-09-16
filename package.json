@@ -1,8 +1,8 @@
 {
-  "name": "image-builder-4j",
+  "name": "start-cdk",
   "version": "0.1.0",
   "bin": {
-    "image-builder-4j": "bin/image-builder-4j.js"
+    "start-cdk": "bin/start-cdk.js"
   },
   "scripts": {
     "build": "tsc",
@@ -21,6 +21,7 @@
     "prettier": "3.3.3",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
+    "typedoc": "^0.26.7",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.5.0"
   },
