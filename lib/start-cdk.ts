@@ -16,4 +16,11 @@ export class StartCDKStack extends cdk.Stack {
     //   visibilityTimeout: cdk.Duration.seconds(300)
     // });
   }
+
+  /**
+   * NAGのチェックを抑制する
+   */
+  public addCdkNagSuppressions() {
+    // 必要に応じてNag suppressionsを追加
+  }
 }
