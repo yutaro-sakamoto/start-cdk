@@ -7,9 +7,9 @@ import { Aspects } from "aws-cdk-lib";
 
 const app = new cdk.App();
 Aspects.of(app).add(new AwsSolutionsChecks({ verbose: true }));
-const stack = new StartCDKStack(app, "ImageBuilder4JStack", {});
+const stack = new StartCDKStack(app, "StartCDKStack", {});
 
 // 必要に応じて作成するリソース全体に共通のタグを追加
-// cdk.Tags.of(app).add("project", "ImageBuilder4J");
+// cdk.Tags.of(app).add("project", "StartCDKProject");
 
 stack.addCdkNagSuppressions();
