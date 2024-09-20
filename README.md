@@ -14,6 +14,11 @@ CDKの設定だけでなく、GitHub Actionsの設定も含まれている。
 
 このテンプレートを使って新しいCDKプロジェクトを始めるには、以下の手順に従うこと。
 
+## cdk bootstrapの実行
+
+[公式ドキュメント](https://docs.aws.amazon.com/ja_jp/cdk/v2/guide/bootstrapping-env.html)を参考に、`cdk bootstrap`を実行する。
+ただし、この操作はAWSアカウントごとに一度だけ実行すればよいので、他のCDKプロジェクトの開始時に実行済みであれば、この手順は不要である。
+
 ## 新しい空のGitHubリポジトリを作成する
 
 WebブラウザまたはGitHub CLIを使って新しい空のプロジェクトを作成する。
