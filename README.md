@@ -26,6 +26,11 @@ WebブラウザまたはGitHub CLIを使って新しい空のプロジェクト�
 
 ## Open ID Connectの設定
 
+### Identity ProviderをAWSに追加
+
+[公式ドキュメント](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services#adding-the-identity-provider-to-aws)を参考にIdentity ProviderをAWSに追加する。
+
+### IAMロールの作成
 > [!CAUTION]
 > この手順にミスが有ると、不正なユーザがAWSリソースにアクセスできる可能性がある。
 > 信頼ポリシーの設定に誤字がないか、慎重に設定すること。
