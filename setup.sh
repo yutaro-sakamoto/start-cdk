@@ -9,3 +9,4 @@ fi
 mkdir -p $project_name
 cd $project_name
 npm init
+npm install --save-dev jest aws-cdk eslint typescript typedoc ts-jest ts-node  eslint @eslint/js @types/eslint__js typescript typescript-eslint prettier
