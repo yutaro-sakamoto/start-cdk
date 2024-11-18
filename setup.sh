@@ -21,3 +21,28 @@ npx prettier . --write
 git add -u
 EOF
 chmod +x .git/hooks/pre-commit
+
+cat <<EOF > .prettierignore
+# Ignore artifacts:
+build
+coverage
+cdk.out
+EOF
+
+cat <<EOF > .prettierrc
+{}
+EOF
+
+cat <<EOF > .gitignore
+*.js
+!jest.config.js
+*.d.ts
+node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# typedoc documents directory
+docs
+EOF
