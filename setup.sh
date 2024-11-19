@@ -22,27 +22,23 @@ git add -u
 EOF
 chmod +x .git/hooks/pre-commit
 
-cat <<EOF > .prettierignore
-# Ignore artifacts:
-build
-coverage
-cdk.out
-EOF
+BASE_URL="https://github.com/yutaro-sakamoto/start-cdk/tree/main/"
+curl -L -o .prettierignore   ${BASE_URL}/.prettierignore
+curl -L -o .prettierrc       ${BASE_URL}/.prettierrc
+curl -L -o .gitignore        ${BASE_URL}/.gitignore
+curl -L -o eslint.config.mjs ${BASE_URL}/eslint.config.mjs
+curl -L -o jest.config.js    ${BASE_URL}/jest.config.js
 
-cat <<EOF > .prettierrc
-{}
-EOF
+mkdir -p .github/workflows
 
-cat <<EOF > .gitignore
-*.js
-!jest.config.js
-*.d.ts
-node_modules
+cd .github/
+curl -L -o dependabot.yml ${BASE_URL}/.github/dependabot.yml
 
-# CDK asset staging directory
-.cdk.staging
-cdk.out
-
-# typedoc documents directory
-docs
-EOF
+cd workflows/
+curl -L -o check-workflows.yml ${BASE_URL}/.github/workflows/check-workflows.yml
+curl -L -o deploy.yml          ${BASE_URL}/.github/workflows/deploy.yml
+curl -L -o post-cdk-diff.yml   ${BASE_URL}/.github/workflows/post-cdk-diff.yml
+curl -L -o pull_request.yml    ${BASE_URL}/.github/workflows/pull_request.yml
+curl -L -o push-main.yml       ${BASE_URL}/.github/workflows/push-main.yml
+curl -L -o push.yml            ${BASE_URL}/.github/workflows/push.yml
+curl -L -o test.yml            ${BASE_URL}/.github/workflows/test.yml
