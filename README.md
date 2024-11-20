@@ -69,23 +69,9 @@ Secretsの設定方法は[公式ドキュメント](https://docs.github.com/en/a
 | AWS_ID         | デプロイ先のAWSアカウントのID             |
 | ROLE_NAME      | Open ID Connectの設定時に作成したロール名 |
 
-## このリポジトリをクローンし、空のリポジトリにプッシュする
+## Gitリポジトリを作成する
 
-以下のコマンドを実行して、このリポジトリをクローンし、新しいリポジトリにプッシュする。
-
-```bash
-git clone https://github.com/yutaro-sakamoto/start-cdk.git
-cd start-cdk
-rm -rf .git LICENSE
-git init
-git remote add origin <新しいリポジトリのURL>
-git br -m main
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-これにより、空のスタックがAWSにデプロイされる。
+`curl -L -o setup.sh https://raw.githubusercontent.com/yutaro-sakamoto/start-cdk/refs/heads/main/setup.sh; bash setup.sh; rm setup.sh`コマンドを実行してGitリポジトリを作成する
 
 # その他の設定(任意)
 
