@@ -77,17 +77,6 @@ Secretsの設定方法は[公式ドキュメント](https://docs.github.com/en/a
 
 その他おすすめの設定を以下に示す。
 
-## .git/hooks/pre-commitの追加
-
-コミット前にtsファイルのフォーマットを自動で行うために、pre-commitフックを追加する。
-
-```bash
-echo "#!/bin/bash" > .git/hooks/pre-commit
-echo "npx prettier . --write" >> .git/hooks/pre-commit
-echo "git add -u" >> .git/hooks/pre-commit
-chmod +x .git/hooks/pre-commit
-```
-
 ## mainブランチの保護
 
 [公式ドキュメント](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)を参考に、mainブランチを保護する。
