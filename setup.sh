@@ -22,7 +22,7 @@ git add -u
 EOF
 chmod +x .git/hooks/pre-commit
 
-BASE_URL="https://github.com/yutaro-sakamoto/start-cdk/tree/main/"
+BASE_URL="https://raw.githubusercontent.com/yutaro-sakamoto/start-cdk/refs/heads/main/"
 curl -L -o .prettierignore   ${BASE_URL}/.prettierignore
 curl -L -o .prettierrc       ${BASE_URL}/.prettierrc
 curl -L -o .gitignore        ${BASE_URL}/.gitignore
