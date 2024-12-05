@@ -122,6 +122,9 @@ cdk-nagのエラーや警告を抑制するには、lib/stack-cdk.tsのaddCdkNag
 
 [dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)が有効になっているため、定期的に依存パッケージのアップデートを促すPull Requestが作成される。詳細設定は.github/dependabot.ymlを参照せよ。
 
+また、dependabotの出したPRをテストが成功したら自動マージする機能はデフォルトでOFFになっている。
+必要なら[公式ドキュメント](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request)を参照して自動マージの設定を有効化し、.github/workflows/pull_request.ymlの自動マージジョブのコメントアウトを外すこと。
+
 ## PULL_REQUEST_TEMPLATE
 
 デフォルトのPull Requestテンプレートが設定されている。
