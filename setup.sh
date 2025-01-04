@@ -9,7 +9,7 @@ fi
 mkdir -p $project_name
 cd $project_name
 cdk init app --language typescript
-npm install --save-dev jest aws-cdk eslint typescript typedoc ts-jest ts-node  eslint @eslint/js @types/eslint__js typescript typescript-eslint prettier @types/jest @types/node globals
+npm install --save-dev jest aws-cdk eslint typescript typedoc ts-jest ts-node  eslint @eslint/js @types/eslint__js typescript typescript-eslint prettier @types/jest @types/node globals cdk-nag
 
 git init
 git branch -m main
