@@ -34,6 +34,7 @@ mkdir -p .github/workflows
 cd .github/
 curl -L -o dependabot.yml           ${BASE_URL}/.github/dependabot.yml
 curl -L -o PULL_REQUEST_TEMPLATE.md ${BASE_URL}/.github/PULL_REQUEST_TEMPLATE.md
+curl -L -o copilot-instructions.md  ${BASE_URL}/.github/copilot-instructions.md
 
 cd workflows/
 curl -L -o check-workflows.yml ${BASE_URL}/.github/workflows/check-workflows.yml
