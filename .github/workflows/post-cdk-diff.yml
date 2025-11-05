@@ -30,8 +30,12 @@ jobs:
       - name: Run `cdk diff`
         run: |
           npm install
-          echo '# cdk diffの結果' > cdk-diff-result.txt
-          npx cdk diff >> cdk-diff-result.txt
+          {
+            echo '# cdk diffの結果';
+            echo '```';
+            npx cdk diff;
+            echo '```';
+          } > cdk-diff-result.txt
 
       - name: Post a comment
         uses: actions/github-script@v7.0.1
