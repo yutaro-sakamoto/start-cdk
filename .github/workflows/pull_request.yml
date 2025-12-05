@@ -27,6 +27,13 @@ jobs:
     secrets: inherit
     uses: ./.github/workflows/test.yml
 
+  # Dev Containerのテストを実行する
+  test-devcontainer:
+    needs: check-workflows
+    permissions:
+      contents: read
+    uses: ./.github/workflows/test-devcontainer.yml
+
   # cdk diffの結果をコメントする
   # このリポジトリとAWS環境のOpen ID Connect等による接続が確立したらコメントを外すと良い
   #cdk-diff-comment:
