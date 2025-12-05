@@ -22,7 +22,7 @@ jobs:
         id: latest-version
         run: |
           # rhysd/actionlintリポジトリから最新のリリースバージョンを取得
-          RESPONSE=$(curl -s https://api.github.com/repos/rhysd/actionlint/releases/latest)
+          RESPONSE=$(curl -sf https://api.github.com/repos/rhysd/actionlint/releases/latest)
           if [ -z "$RESPONSE" ]; then
             echo "Error: Failed to fetch latest release information"
             exit 1
@@ -40,6 +40,10 @@ jobs:
         run: |
           # check-workflows.ymlから現在のバージョンを抽出
           CURRENT_VERSION=$(grep -oP 'actionlint@\Kv[0-9]+\.[0-9]+\.[0-9]+' .github/workflows/check-workflows.yml)
+          if [ -z "$CURRENT_VERSION" ]; then
+            echo "Error: Failed to extract current version from check-workflows.yml"
+            exit 1
+          fi
           echo "current=$CURRENT_VERSION" >> "$GITHUB_OUTPUT"
           echo "Current version: $CURRENT_VERSION"
 
