@@ -27,10 +27,3 @@ jobs:
       contents: read
     secrets: inherit
     uses: ./.github/workflows/test.yml
-
-  # Dev Containerのテストを実行する
-  test-devcontainer:
-    needs: check-workflows
-    permissions:
-      contents: read
-    uses: ./.github/workflows/test-devcontainer.yml

@@ -9,6 +9,3 @@ cdk.out
 
 # typedoc documents directory
 docs
-
-# actionlint binary
-actionlint
