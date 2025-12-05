@@ -3,7 +3,7 @@ name: Update actionlint version
 
 on:
   schedule:
-    # 毎月1日の午前9時(JST)に実行
+    # 毎月1日の午前0時(UTC、日本時間午前9時)に実行
     - cron: '0 0 1 * *'
   workflow_dispatch:
 
@@ -22,7 +22,16 @@ jobs:
         id: latest-version
         run: |
           # rhysd/actionlintリポジトリから最新のリリースバージョンを取得
-          LATEST_VERSION=$(curl -s https://api.github.com/repos/rhysd/actionlint/releases/latest | jq -r .tag_name)
+          RESPONSE=$(curl -s https://api.github.com/repos/rhysd/actionlint/releases/latest)
+          if [ -z "$RESPONSE" ]; then
+            echo "Error: Failed to fetch latest release information"
+            exit 1
+          fi
+          LATEST_VERSION=$(echo "$RESPONSE" | jq -r .tag_name)
+          if [ -z "$LATEST_VERSION" ] || [ "$LATEST_VERSION" = "null" ]; then
+            echo "Error: Failed to parse version from API response"
+            exit 1
+          fi
           echo "latest=$LATEST_VERSION" >> "$GITHUB_OUTPUT"
           echo "Latest version: $LATEST_VERSION"
 
@@ -31,8 +40,8 @@ jobs:
         run: |
           # check-workflows.ymlから現在のバージョンを抽出
           CURRENT_VERSION=$(grep -oP 'actionlint@\Kv[0-9]+\.[0-9]+\.[0-9]+' .github/workflows/check-workflows.yml)
-          echo "current=v$CURRENT_VERSION" >> "$GITHUB_OUTPUT"
-          echo "Current version: v$CURRENT_VERSION"
+          echo "current=$CURRENT_VERSION" >> "$GITHUB_OUTPUT"
+          echo "Current version: $CURRENT_VERSION"
 
       - name: Compare versions
         id: compare
