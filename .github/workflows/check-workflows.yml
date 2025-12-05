@@ -16,9 +16,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Cache actionlint
+        id: cache-actionlint
+        uses: actions/cache@v4
+        with:
+          path: actionlint
+          key: actionlint-1.7.9
+
       - name: Install actionlint
+        if: steps.cache-actionlint.outputs.cache-hit != 'true'
         run: |
-          GOBIN=$(pwd) go install github.com/rhysd/actionlint/cmd/actionlint@latest
+          GOBIN=$(pwd) go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.9
 
       - name: Run actionlint
         run: |
